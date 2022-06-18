@@ -1,0 +1,132 @@
+.App {
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  background-color: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 700px;
+  height: 700px;
+  display: flex;
+  border: solid 10px;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.center--con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.rgb--squares {
+  width: 224px;
+  height: 100px;
+  background-color: white;
+  border: solid 3px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 11px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+}
+
+.quote--container {
+  width: 70%;
+  color: white;
+  padding: 20px;
+}
+
+.qc--black {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.9) 50%);
+}
+
+.qc--red {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(45, 43, 31, 0.5) 0%, rgba(52, 39, 1, 0.9) 50%);
+}
+
+.qc--blue {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(60, 75, 80, 0.5) 0%, rgba(5, 20, 30, 0.95) 50%);
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.square:hover {
+  width: 55px;
+  height: 55px;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.button--54 {
+  width: 250px;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  background-color: white;
+}
+
+.button--54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+.button--54:hover {
+  background-color: rgb(255, 215, 0);
+}
+
+@media (min-width: 768px) {
+  .button--54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    border: solid 10px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .quote--container {
+    width: 70%;
+    font-size: small;
+    color: white;
+    padding: 13px;
+  }
+}
