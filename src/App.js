@@ -61,9 +61,7 @@ function App() {
   return (
     <div className="App">
       <div className="center--con">
-        <h1 className="title animate__animated animate__flipInX animate__faster">
-          Wisdom Generator 1.0
-        </h1>
+        <Header />
         <div
           className="container"
           style={{ backgroundImage: `url(${image})` }}
@@ -102,15 +100,7 @@ function App() {
           ></div>
         </div>
       </div>
-      <p>
-        <br />
-        React / CSS Project
-        <br />
-        <strong>Made by Sergey Vozika</strong>
-        <br />
-        2022
-        <br />
-      </p>
+      <Footer />
     </div>
   );
 }

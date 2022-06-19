@@ -1,13 +1,11 @@
 import React from "react";
 
 export default function Header() {
-
   return (
     <div>
-      <p>KUKU</p>
-      <p></p>
-      <p></p>
-      <button>Get a new quote</button>
+      <h1 className="title animate__animated animate__flipInX animate__faster">
+        Wisdom Generator 1.0
+      </h1>
     </div>
   );
 }

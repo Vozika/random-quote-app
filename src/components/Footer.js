@@ -4,10 +4,15 @@ export default function Footer() {
 
   return (
     <div>
-      <p>KUKU</p>
-      <p></p>
-      <p></p>
-      <button>Get a new quote</button>
+      <p>
+        <br />
+        React / CSS Project
+        <br />
+        <strong>Made by Sergey Vozika</strong>
+        <br />
+        2022
+        <br />
+      </p>
     </div>
   );
 }
