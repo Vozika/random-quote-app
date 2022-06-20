@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Button from "./components/Button";
+import Square from "./components/Square";
 
 function App() {
   const [quote, setQuote] = React.useState({
@@ -30,6 +31,21 @@ function App() {
     },
   ];
 
+  const squares = [
+    {
+      id: 1,
+      bgcolor: "qc--black",
+    },
+    {
+      id: 2,
+      bgcolor: "qc--red",
+    },
+    {
+      id: 3,
+      bgcolor: "qc--blue",
+    },
+  ];
+
   React.useEffect(() => {
     fetch("https://type.fit/api/quotes")
       .then((res) => res.json())
@@ -51,7 +67,7 @@ function App() {
       author: author,
     }));
 
-    animateImage(document.getElementById("image-div"));
+    animateImage(document.getElementById("animate-div"));
   }
 
   function getImage() {
@@ -77,17 +93,20 @@ function App() {
   return (
     <div className="App">
       <div className="center--con">
+
         <Header />
+
         <div
           className="container"
           style={{ backgroundImage: `url(${image})` }}
           onClick={getAll}
         >
           <div className={`quote--container ${bgColor}`}>
-            <h2 id="image-div">{quote.text}</h2>
+            <h2 id="animate-div">{quote.text}</h2>
             <p>- {quote.author} -</p>
           </div>
         </div>
+        
         <br />
         <Button text={buttons[0].text} getbusy={getAll} />
         <br />
@@ -95,22 +114,26 @@ function App() {
         <br />
         <Button text={buttons[2].text} getbusy={getImage} />
         <br />
+
         <div className="rgb--squares">
-          <div
-            className="square qc--black"
-            onClick={() => setBgColor("qc--black")}
-          ></div>
-          <div
-            className="square qc--red"
-            onClick={() => setBgColor("qc--red")}
-          ></div>
-          <div
-            className="square qc--blue"
-            onClick={() => setBgColor("qc--blue")}
-          ></div>
+          <Square
+            squarebgcolor={squares[0].bgcolor}
+            getbusy={() => setBgColor(squares[0].bgcolor)}
+          />
+          <Square
+            squarebgcolor={squares[1].bgcolor}
+            getbusy={() => setBgColor(squares[1].bgcolor)}
+          />
+          <Square
+            squarebgcolor={squares[2].bgcolor}
+            getbusy={() => setBgColor(squares[2].bgcolor)}
+          />
         </div>
+
       </div>
+
       <Footer />
+      
     </div>
   );
 }
