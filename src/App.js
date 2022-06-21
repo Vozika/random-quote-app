@@ -38,11 +38,23 @@ function App() {
     },
     {
       id: 2,
-      bgcolor: "qc--red",
+      bgcolor: "qc--yellow",
     },
     {
       id: 3,
       bgcolor: "qc--blue",
+    },
+    {
+      id: 4,
+      bgcolor: "qc--green",
+    },
+    {
+      id: 5,
+      bgcolor: "qc--red",
+    },
+    {
+      id: 6,
+      bgcolor: "qc--violet",
     },
   ];
 
@@ -92,12 +104,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="center--con">
-
+      <div className="center--container">
         <Header />
 
         <div
-          className="container"
+          className="image--container"
           style={{ backgroundImage: `url(${image})` }}
           onClick={getAll}
         >
@@ -106,7 +117,22 @@ function App() {
             <p>- {quote.author} -</p>
           </div>
         </div>
-        
+
+        <br />
+
+        <div className="rgb--squares">
+          {squares.map((square) => {
+            console.log(square);
+            return (
+              <Square
+                squarebgcolor={square.bgcolor}
+                getbusy={() => setBgColor(square.bgcolor)}
+                key={square.id}
+              />
+            );
+          })}
+        </div>
+
         <br />
         <Button text={buttons[0].text} getbusy={getAll} />
         <br />
@@ -115,25 +141,8 @@ function App() {
         <Button text={buttons[2].text} getbusy={getImage} />
         <br />
 
-        <div className="rgb--squares">
-          <Square
-            squarebgcolor={squares[0].bgcolor}
-            getbusy={() => setBgColor(squares[0].bgcolor)}
-          />
-          <Square
-            squarebgcolor={squares[1].bgcolor}
-            getbusy={() => setBgColor(squares[1].bgcolor)}
-          />
-          <Square
-            squarebgcolor={squares[2].bgcolor}
-            getbusy={() => setBgColor(squares[2].bgcolor)}
-          />
-        </div>
-
+        <Footer />
       </div>
-
-      <Footer />
-      
     </div>
   );
 }
