@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Button from "./components/Button";
 import Square from "./components/Square";
+import html2canvas from 'html2canvas';
 
 function App() {
   const [quote, setQuote] = React.useState({
@@ -29,6 +30,10 @@ function App() {
       id: 3,
       text: "Change the Image",
     },
+    {
+      id: 4,
+      text: "Capture"
+    }
   ];
 
   const squares = [
@@ -102,6 +107,12 @@ function App() {
     getImage();
   }
 
+  // function screenCapture() {
+  //   html2canvas(document.querySelector("#capture")).then(canvas => {
+  //     document.body.appendChild(canvas)
+  // });
+  // }
+
   return (
     <div className="App">
       <div className="center--container">
@@ -111,6 +122,7 @@ function App() {
           className="image--container"
           style={{ backgroundImage: `url(${image})` }}
           onClick={getAll}
+          id="capture"
         >
           <div className={`quote--container ${bgColor}`}>
             <h2 id="animate-div">{quote.text}</h2>
@@ -132,7 +144,7 @@ function App() {
             );
           })}
         </div>
-
+        
         <br />
         <Button text={buttons[0].text} getbusy={getAll} />
         <br />
@@ -140,6 +152,8 @@ function App() {
         <br />
         <Button text={buttons[2].text} getbusy={getImage} />
         <br />
+        {/* <Button text={buttons[3].text} getbusy={screenCapture} />
+        <br /> */}
 
         <Footer />
       </div>
