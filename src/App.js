@@ -63,7 +63,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <main className="App">
       <div className="center--container">
         <Header />
 
@@ -95,6 +95,7 @@ function App() {
         </div>
 
         <br />
+
         <div className="buttons--container">
           <Button text={buttons[0].text} getbusy={getAll} />
 
@@ -102,9 +103,10 @@ function App() {
 
           <Button text={buttons[2].text} getbusy={getImage} />
         </div>
+
         <Footer />
       </div>
-    </div>
+    </main>
   );
 }
 

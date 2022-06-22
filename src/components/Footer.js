@@ -1,9 +1,8 @@
 import React from "react";
 
 export default function Footer() {
-
   return (
-    <div>
+    <footer>
       <p>
         <br />
         React / CSS Project
@@ -13,6 +12,6 @@ export default function Footer() {
         2022
         <br />
       </p>
-    </div>
+    </footer>
   );
 }
