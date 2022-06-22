@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <div>
       <h1 className="title animate__animated animate__flipInX animate__faster">
-        Wisdom Generator 1.1
+        - Wisdom Generator 1.2 -
       </h1>
     </div>
   );

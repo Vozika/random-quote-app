@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Button from "./components/Button";
 import Square from "./components/Square";
-import html2canvas from 'html2canvas';
+import squares from "./components/SquareData";
+import buttons from "./components/ButtonData";
 
 function App() {
   const [quote, setQuote] = React.useState({
@@ -16,52 +17,6 @@ function App() {
     "https://source.unsplash.com/random/"
   );
   const [bgColor, setBgColor] = React.useState("qc--black");
-
-  const buttons = [
-    {
-      id: 1,
-      text: "More Wisdom",
-    },
-    {
-      id: 2,
-      text: "Change the Quote",
-    },
-    {
-      id: 3,
-      text: "Change the Image",
-    },
-    {
-      id: 4,
-      text: "Capture"
-    }
-  ];
-
-  const squares = [
-    {
-      id: 1,
-      bgcolor: "qc--black",
-    },
-    {
-      id: 2,
-      bgcolor: "qc--yellow",
-    },
-    {
-      id: 3,
-      bgcolor: "qc--blue",
-    },
-    {
-      id: 4,
-      bgcolor: "qc--green",
-    },
-    {
-      id: 5,
-      bgcolor: "qc--red",
-    },
-    {
-      id: 6,
-      bgcolor: "qc--violet",
-    },
-  ];
 
   React.useEffect(() => {
     fetch("https://type.fit/api/quotes")
@@ -107,12 +62,6 @@ function App() {
     getImage();
   }
 
-  // function screenCapture() {
-  //   html2canvas(document.querySelector("#capture")).then(canvas => {
-  //     document.body.appendChild(canvas)
-  // });
-  // }
-
   return (
     <div className="App">
       <div className="center--container">
@@ -144,17 +93,15 @@ function App() {
             );
           })}
         </div>
-        
-        <br />
-        <Button text={buttons[0].text} getbusy={getAll} />
-        <br />
-        <Button text={buttons[1].text} getbusy={getQuote} />
-        <br />
-        <Button text={buttons[2].text} getbusy={getImage} />
-        <br />
-        {/* <Button text={buttons[3].text} getbusy={screenCapture} />
-        <br /> */}
 
+        <br />
+        <div className="buttons--container">
+          <Button text={buttons[0].text} getbusy={getAll} />
+
+          <Button text={buttons[1].text} getbusy={getQuote} />
+
+          <Button text={buttons[2].text} getbusy={getImage} />
+        </div>
         <Footer />
       </div>
     </div>
