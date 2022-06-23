@@ -4,7 +4,6 @@ export default function Footer() {
   return (
     <footer>
       <p>
-        <br />
         React / CSS Project
         <br />
         <strong>Made by Sergey Vozika</strong>

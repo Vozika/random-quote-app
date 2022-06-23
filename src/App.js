@@ -18,6 +18,12 @@ function App() {
   );
   const [bgColor, setBgColor] = React.useState("qc--black");
 
+  const [showModal, setShowModal] = React.useState(false);
+  const showHideClassName = showModal
+    ? "modal display-block"
+    : "modal display-none";
+  const showHideInfo = showModal ? "Hide Info" : "Show Info";
+
   React.useEffect(() => {
     fetch("https://type.fit/api/quotes")
       .then((res) => res.json())
@@ -62,6 +68,10 @@ function App() {
     getImage();
   }
 
+  function showModalButton() {
+    setShowModal((prevModal) => !prevModal);
+  }
+
   return (
     <main className="App">
       <div className="center--container">
@@ -70,9 +80,32 @@ function App() {
         <div
           className="image--container"
           style={{ backgroundImage: `url(${image})` }}
-          onClick={getAll}
+          onClick={!showModal && getAll}
           id="capture"
         >
+          <div className={showHideClassName} id="modal--div">
+            <h3>Hello and welcome</h3>
+            <p>
+              This project is designed and programmed by Sergey Vozika. It's a random quote / image generator.
+              <br />
+              <br />
+              The project is made using React and CSS. Some icons from <a href="https://remixicon.com/">Remix Icon library</a> were also
+              used.
+              <br />
+              <br />
+              "More Wisdom" button fetches both a random quote and a random image from an API. "Change The Quote" button fetches only a quote from <a href="https://type.fit/api/quotes"> https://type.fit/api/quotes</a>.
+              <br />
+              <br />
+              "Change The Image" button fetches an image from <a href="https://source.unsplash.com/random/"> https://source.unsplash.com/random/ </a>.
+            </p>
+            <div className="icon--holder">
+              <i
+                class="ri-close-circle-line ri-2x"
+                onClick={showModalButton}
+              ></i>
+            </div>
+          </div>
+
           <div className={`quote--container ${bgColor}`}>
             <h2 id="animate-div">{quote.text}</h2>
             <p>- {quote.author} -</p>
@@ -103,7 +136,10 @@ function App() {
 
           <Button text={buttons[2].text} getbusy={getImage} />
         </div>
-
+        <br />
+        <a href="#" onClick={showModalButton}>
+          {showHideInfo}
+        </a>
         <Footer />
       </div>
     </main>
