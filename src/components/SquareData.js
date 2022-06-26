@@ -1,27 +1,27 @@
 const squares = [
     {
       id: 1,
-      bgcolor: "qc--black",
+      bgcolor: "qc-black",
     },
     {
       id: 2,
-      bgcolor: "qc--yellow",
+      bgcolor: "qc-yellow",
     },
     {
       id: 3,
-      bgcolor: "qc--blue",
+      bgcolor: "qc-blue",
     },
     {
       id: 4,
-      bgcolor: "qc--green",
+      bgcolor: "qc-green",
     },
     {
       id: 5,
-      bgcolor: "qc--red",
+      bgcolor: "qc-red",
     },
     {
       id: 6,
-      bgcolor: "qc--violet",
+      bgcolor: "qc-violet",
     },
   ];
 

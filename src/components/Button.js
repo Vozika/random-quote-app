@@ -4,7 +4,7 @@ export default function Button(props) {
 
   return (
     <div>
-        <button onClick={props.getbusy} className="button--54">{props.text}</button>
+        <button onClick={props.getbusy} className="button">{props.text}</button>
     </div>
   );
 }

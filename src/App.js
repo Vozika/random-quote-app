@@ -74,11 +74,11 @@ function App() {
 
   return (
     <main className="App">
-      <div className="center--container">
+      <div className="center-container">
         <Header />
 
         <div
-          className="image--container"
+          className="image-container"
           style={{ backgroundImage: `url(${image})` }}
           onClick={!showModal && getAll}
           id="capture"
@@ -98,7 +98,7 @@ function App() {
               <br />
               "Change The Image" button fetches an image from <a href="https://source.unsplash.com/random/"> https://source.unsplash.com/random/ </a>.
             </p>
-            <div className="icon--holder">
+            <div className="icon-holder">
               <i
                 class="ri-close-circle-line ri-2x"
                 onClick={showModalButton}
@@ -106,7 +106,7 @@ function App() {
             </div>
           </div>
 
-          <div className={`quote--container ${bgColor}`}>
+          <div className={`quote-container ${bgColor}`}>
             <h2 id="animate-div">{quote.text}</h2>
             <p>- {quote.author} -</p>
           </div>
@@ -114,7 +114,7 @@ function App() {
 
         <br />
 
-        <div className="rgb--squares">
+        <div className="squares">
           {squares.map((square) => {
             console.log(square);
             return (
@@ -129,7 +129,7 @@ function App() {
 
         <br />
 
-        <div className="buttons--container">
+        <div className="buttons">
           <Button text={buttons[0].text} getbusy={getAll} />
 
           <Button text={buttons[1].text} getbusy={getQuote} />
