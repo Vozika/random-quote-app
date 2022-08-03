@@ -16,7 +16,7 @@ function App() {
   const [image, setImage] = React.useState(
     "https://source.unsplash.com/random/"
   );
-  const [bgColor, setBgColor] = React.useState("qc--black");
+  const [bgColor, setBgColor] = React.useState("qc-black");
 
   const [showModal, setShowModal] = React.useState(false);
   const showHideClassName = showModal
